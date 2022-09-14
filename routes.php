@@ -1,17 +1,9 @@
 <?php
 use App\Router;
+use App\Controllers\PublicController;
+// 'App\Controllers\PublicController'
+Router::addRoute('/', [PublicController::class, 'index']);
 
+Router::addRoute('/page1', [PublicController::class, 'page1']);
 
-Router::addRoute('/', function(){
-    $name = 'Kaspar';
-    $items = ['piim', 'sai', 'vodka'];
-    include(__DIR__ . '/views/home.php');
-});
-
-Router::addRoute('/page1', function(){
-    include(__DIR__ . '/views/page1.php');
-});
-
-Router::addRoute('/page2', function(){
-    include(__DIR__ . '/views/page2.php');
-});
+Router::addRoute('/page2', [PublicController::class, 'page2']);
