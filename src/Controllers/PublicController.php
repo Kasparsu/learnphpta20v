@@ -1,18 +1,25 @@
 <?php
 namespace App\Controllers;
 
+
+use App\DB;
+use App\Models\Post;
+use App\Models\User;
+
 class PublicController {
     public function index(){
-        $name = 'Kaspar';
-        $items = ['piim', 'sai', 'vodka'];
-        include(__DIR__ . '/views/home.php');
+
+        $posts = Post::all();
+        $users = User::all();
+        var_dump($users);
+        view('home', compact('posts'));
     }
 
     public function page1(){
-        include(__DIR__ . '/views/page1.php');
+        view('page1');
     }
 
     public function page2(){
-        include(__DIR__ . '/views/page2.php');
+        view('page2');
     }
 }
