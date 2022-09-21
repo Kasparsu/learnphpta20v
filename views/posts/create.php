@@ -1,5 +1,5 @@
 <?php include('views/partials/header.php'); ?>
-<form action="/test" method="POST">
+<form action="/posts/new" method="POST">
     <div class="field">
         <label class="label">Title</label>
         <div class="control">

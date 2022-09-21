@@ -17,9 +17,9 @@
                 <td><?=$post->modified_at?></td>
                 <td>
                     <div class="buttons has-addons">
-                        <a class="button is-link">View</a>
-                        <a class="button is-warning">Edit</a>
-                        <a class="button is-danger">Delete</a>
+                        <a href="/posts/show?id=<?=$post->id?>" class="button is-link">View</a>
+                        <a href="/posts/edit?id=<?=$post->id?>" class="button is-warning">Edit</a>
+                        <a href="/posts/delete?id=<?=$post->id?>" class="button is-danger">Delete</a>
                     </div>
                 </td>
             </tr>

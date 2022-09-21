@@ -15,3 +15,7 @@ Router::get('/test', [PublicController::class, 'test']);
 Router::get('/posts', [PostsController::class, 'index']);
 Router::get('/posts/new', [PostsController::class, 'create']);
 Router::post('/posts/new', [PostsController::class, 'store']);
+Router::get('/posts/show', [PostsController::class, 'show']);
+Router::get('/posts/edit', [PostsController::class, 'edit']);
+Router::post('/posts/edit', [PostsController::class, 'update']);
+Router::get('/posts/delete', [PostsController::class, 'destroy']);
