@@ -8,10 +8,7 @@ use App\Models\User;
 
 class PublicController {
     public function index(){
-
         $posts = Post::all();
-        $users = User::all();
-        var_dump($users);
         view('home', compact('posts'));
     }
 
@@ -21,5 +18,10 @@ class PublicController {
 
     public function page2(){
         view('page2');
+    }
+
+    public function test(){
+        var_dump($_GET);
+        var_dump($_POST);
     }
 }
