@@ -47,6 +47,14 @@ class DB
         return $stmt->fetch();
     }
 
+    public function where($field, $value, $table, $model=\stdClass::class){
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE $field='$value';");
+        $stmt->execute();
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, $model);
+        return $stmt->fetchAll();
+    }
+
+
     public function update($id, $table, $fields) {
         $updateLine = '';
         foreach($fields as $key=>$field){

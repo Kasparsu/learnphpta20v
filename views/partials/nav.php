@@ -25,14 +25,21 @@
 
         <div class="navbar-end">
             <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
+                <?php if(auth()): ?>
+                    <strong><?=auth()->email?></strong>
+                    <a href="/logout" class="button is-light">
+                        Logout
                     </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
-                </div>
+                <?php else: ?>
+                    <div class="buttons">
+                        <a href="/register" class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a href="/login" class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
